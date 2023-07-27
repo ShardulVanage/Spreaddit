@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import Navbar from '@/components/Navbar'
 import { Toaster } from '@/components/ui/Toaster'
+import Provider from '@/components/Provider'
 
 export const metadata = {
   title: 'SpreadĐit',
@@ -24,7 +25,10 @@ export default function RootLayout({
       )}>
 
       <body className='min-h-screen pt-12 bg-slate-50 antialiased'>
-        <Navbar />
+        <Provider>
+          <Navbar />
+
+        </Provider>
         <div className='container max-w-7xl mx-auto h-full pt-12'>
           {children}
 
