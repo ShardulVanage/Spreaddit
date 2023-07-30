@@ -5,6 +5,7 @@ import { NextAuthOptions, getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 
 export const authOptions: NextAuthOptions = {
+
     adapter: PrismaAdapter(db),
     session: {
         strategy: 'jwt',
@@ -16,8 +17,10 @@ export const authOptions: NextAuthOptions = {
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID ?? "",
             clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
+
         }),
     ],
+
     callbacks: {
         async session({ token, session }) {
             if (token) {
@@ -30,6 +33,7 @@ export const authOptions: NextAuthOptions = {
 
             return session
         },
+
 
         async jwt({ token, user }) {
 
@@ -63,6 +67,7 @@ export const authOptions: NextAuthOptions = {
                 email: dbUser.email,
                 picture: dbUser.image,
                 username: dbUser.username,
+
             }
 
         },

@@ -1,15 +1,21 @@
-"use client";
-import { SessionProvider } from "next-auth/react";
-import React, { ReactNode } from "react";
+'use client'
 
-interface Props {
-    children: ReactNode;
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+import { SessionProvider } from 'next-auth/react'
+import { FC, ReactNode } from 'react'
+
+interface LayoutProps {
+    children: ReactNode
 }
 
-const Provider = (props: Props) => {
-    return <SessionProvider>
-        {props.children}
-    </SessionProvider>
+const queryClient = new QueryClient()
+
+const Providers: FC<LayoutProps> = ({ children }) => {
+    return (
+        <QueryClientProvider client={queryClient}>
+            <SessionProvider>{children}</SessionProvider>
+        </QueryClientProvider>
+    )
 }
 
-export default Provider;
+export default Providers

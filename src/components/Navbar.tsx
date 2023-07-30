@@ -6,8 +6,8 @@ import Image from 'next/image'
 import { getAuthSession } from '@/lib/auth'
 import { setEngine } from 'crypto'
 import { useSession } from 'next-auth/react'
-import UserAccountNav from './ui/UserAccoutnNav';
-const Navbar = () => {
+import { UserAccountNav } from './UserAccoutnNav';
+const Navbar = async () => {
 
     const { data: session } = useSession()
 
