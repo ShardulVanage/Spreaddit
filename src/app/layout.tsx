@@ -7,10 +7,11 @@ import { Toaster } from '@/components/ui/Toaster'
 import '@/styles/globals.css'
 import Providers from '@/components/Provider'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Breadit',
+  title: 'SpreadĐit',
   description: 'A Reddit clone built with Next.js and TypeScript.',
 }
 
@@ -29,6 +30,7 @@ export default function RootLayout({
         inter.className
       )}>
       <body className='min-h-screen pt-12 bg-slate-50 antialiased'>
+
         <Providers>
           {/* @ts-expect-error Server Component */}
           <Navbar />
@@ -37,6 +39,7 @@ export default function RootLayout({
           <div className='container max-w-7xl mx-auto h-full pt-12'>
             {children}
           </div>
+
         </Providers>
         <Toaster />
       </body>
