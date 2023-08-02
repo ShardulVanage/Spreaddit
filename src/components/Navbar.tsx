@@ -18,7 +18,7 @@ const Navbar = async () => {
                     <Image src={logo} alt='logo' className='h-16 w-16 sm:h-20 sm:w-20' />
                     <p className='hidden text-zinc-700 text-sm font-medium md:block font-'>SpreadĐit</p>
 
-                    <p className='hidden text-zinc-700 text-sm font-medium md:block'>Breadit</p>
+
                 </Link>
 
                 {/* search bar */}
